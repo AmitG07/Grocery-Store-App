@@ -1,0 +1,61 @@
+<div class="product_data">
+    <div class="action">
+        <div class="dropdown">
+            <button class="dropbtn">Category</button>
+            <div class="dropdown-content">
+                <a (click)="FilterData(data)" *ngFor="let data of catagoryList">{{ data }}</a>
+            </div>
+        </div>
+
+        <div class="action_search">
+            <input [(ngModel)]="term" type="text" placeholder="Search here">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </div>
+    
+    </div>
+    <br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Image</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of Products | filter: term | paginate: {
+            itemsPerPage: tableSize,
+            currentPage: page,
+            totalItems: count
+          }
+        ">
+                <td>{{ product.productName }}</td>
+                <td>{{ product.description }}</td>
+                <td>{{ product.price }}</td>
+                <td>
+                    <img src="{{product.image}}" routerLink="/home/viewDetails/{{product.productId}}" 
+                        alt="Could not fetch" width="80px" height="80px">
+                </td>
+
+                <td *ngIf="!role"><button routerLink="/home/viewDetails/{{product.productId}}" mat-raised-button>View
+                        Details</button></td>
+                <td *ngIf="role">
+
+                    <div class="btns">
+                        <button routerLink="/home/editProduct/{{product.productId}}" mat-icon-button>
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                        <button (click)="onClickDelete(product.productId)" mat-icon-button>
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="PageIndex($event)">
+    </pagination-controls>
+</div>

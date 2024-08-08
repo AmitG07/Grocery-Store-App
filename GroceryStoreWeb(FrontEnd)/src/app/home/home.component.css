@@ -1,0 +1,124 @@
+.product_data{
+    max-height: 70dvh;
+    margin: auto;
+    width: 60%;
+  }
+  .action{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+  }
+  .action_term{
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .table {
+      border-collapse: collapse;
+      box-shadow: 0 5px 10px #e1e5ee;
+      background-color: white;
+      align-self: flex-start;
+    }
+  
+    thead {
+      box-shadow: 0 5px 10px #e1e5ee;
+    }
+    .table tr {
+      border: 1px solid #ddd;
+    }
+    .table td,
+    .table th {
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+  
+    .table th {
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+      font-size: 0.7rem;
+      font-weight: 900;
+    }
+    .table tbody tr:nth-child(even) {
+      background-color: #f4f6fb;
+    }
+  
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+  
+    ::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+  
+    ::-webkit-scrollbar-thumb {
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+    @media (max-width: 595px) {
+      .table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        scroll-behavior: smooth;
+        width: 100%;
+      }
+      .actions {
+        width: 100%;
+      }
+    }
+  
+  /*new style*/
+    .dropbtn {
+      background-color: #7300e6;
+      color: white;
+      padding: 8px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      border-radius: 10px;
+    }
+    
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      cursor: pointer;
+    }
+    
+    .dropdown-content a:hover {
+      background-color: #f1f1f1
+    }
+    
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    
+    .dropdown:hover .dropbtn {
+      background-color: #b366ff;
+    }
+    
+    .btns{
+      display: flex;
+      width: 100%;
+      padding: 0;
+    }
+
+    .action_search> button{
+      margin-left: -30px;
+      margin-top: 10px;
+    }

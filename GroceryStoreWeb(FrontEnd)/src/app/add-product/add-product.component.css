@@ -1,0 +1,11 @@
+.main{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    /* min-height: 50dvh; */
+}
+mat-card-content{
+    overflow: auto;
+}

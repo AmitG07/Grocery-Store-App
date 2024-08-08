@@ -1,0 +1,85 @@
+<div class="main">
+    <mat-card style="width: 350px;">
+        <mat-card-header>
+            <h2>Edit Product</h2>
+        </mat-card-header>
+        <mat-card-content>
+            <form class="example-form" [formGroup]="Editproductform" #form="ngForm" (ngSubmit)="EditProducts()">
+                <mat-form-field style="width: 92%;">
+                    <mat-label>Product Name</mat-label>
+                    <input matInput type="email" formControlName="ProductName">
+                    <mat-error *ngIf="Editproductform.controls.ProductName.invalid &&
+                        (Editproductform.controls.ProductName.dirty || Editproductform.controls.ProductName.touched || form.submitted)">
+                        Required and max 100 characters
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field style="width: 92%;">
+                    <mat-label>Description</mat-label>
+                    <input matInput type="text" formControlName="Description">
+                    <mat-error *ngIf="Editproductform.controls.Description.invalid &&
+                        (Editproductform.controls.Description.dirty || Editproductform.controls.Description.touched || form.submitted)">
+                        Required and max 255 characters
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field style="width: 92%;">
+                    <mat-label>Category</mat-label>
+                    <input matInput type="text" formControlName="Category">
+                    <mat-error *ngIf="Editproductform.controls.Category.invalid &&
+                        (Editproductform.controls.Category.dirty || Editproductform.controls.Category.touched || form.submitted)">
+                        Required and max 100 characters
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field style="width: 92%;">
+                    <mat-label>Available Quantity</mat-label>
+                    <input matInput type="number" formControlName="AvailableQuantity">
+                    <mat-error *ngIf="Editproductform.controls.AvailableQuantity.invalid &&
+                        (Editproductform.controls.AvailableQuantity.dirty || Editproductform.controls.AvailableQuantity.touched || form.submitted)">
+                        Required and minimum quantity 1
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field style="width: 92%;">
+                    <mat-label>Price</mat-label>
+                    <input matInput type="number" step="any" formControlName="Price">
+                    <mat-error *ngIf="Editproductform.controls.Price.invalid &&
+                        (Editproductform.controls.Price.dirty || Editproductform.controls.Price.touched || form.submitted)">
+                        Required and minimum price ₹0.1
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field style="width: 92%;">
+                    <mat-label>Discount</mat-label>
+                    <input matInput type="number" step="any" formControlName="Discount">
+                    <mat-error *ngIf="Editproductform.controls.Discount.invalid &&
+                        (Editproductform.controls.Discount.dirty || Editproductform.controls.Discount.touched || form.submitted)">
+                        Not required but minimum 0.1%
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field style="width: 92%;">
+                    <mat-label>Specification</mat-label>
+                    <input matInput type="text" formControlName="Specification">
+                    <mat-error *ngIf="Editproductform.controls.Specification.invalid &&
+                        (Editproductform.controls.Specification.dirty || Editproductform.controls.Specification.touched || form.submitted)">
+                        Enter max 100 characters
+                    </mat-error>
+                </mat-form-field>
+
+                <input formControlName="file" type="file" accept="image/*" (change)="ImageSelect($event)" />
+                <mat-error *ngIf="Editproductform.controls.file.invalid &&
+                    (Editproductform.controls.file.dirty || Editproductform.controls.file.touched || form.submitted)">
+                    Required and png or jpg only
+                </mat-error>
+
+                <div style="margin-top: 5px;">
+                    <button type="submit" mat-raised-button color="primary">Update</button>
+                    <button style="margin-left: 25px;" type="reset" mat-raised-button color="warn">Clear</button>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
+<br><br><br><br>

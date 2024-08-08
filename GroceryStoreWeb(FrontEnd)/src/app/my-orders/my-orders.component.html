@@ -1,0 +1,25 @@
+<div class="body">
+    <div class="CartContainer" style="position: relative">
+      <div class="Header">
+        <h3 class="Heading" style="color: DarkMagenta;">My Orders</h3>
+      </div>
+  
+      <div class="cart" style="max-height: 350px; overflow: auto">
+        <div class="Cart-Items"  *ngFor="let data of productsArr">
+         
+          <div class="image-box">
+            <img src="{{ data.image }}" style="height: 80px ;width: 80px;" />
+          </div>
+
+          <h1 class="title" style="color: DarkOrchid;">{{ data.productName }}</h1>
+          
+          <div class="about"> 
+            <h3 class="subtitle">No. of Items: {{ data.orderedQuantity }}</h3>
+            <h3 class="subtitle">Ordered Date: {{ data.orderDate }}</h3>
+          </div>   
+
+        </div>
+      </div>
+    </div>
+  </div>
+   

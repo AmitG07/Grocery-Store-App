@@ -1,0 +1,29 @@
+<div class="header">
+    <div class="left" *ngIf="customerName == null">
+         <button mat-mini-fab routerLink="../home" [routerLinkActive]="['active']">
+              <mat-icon>home</mat-icon>
+         </button>
+         <a routerLink="/home/login" [routerLinkActive]="['active']">LOGIN</a>
+         <br />
+         <a routerLink="/home/register" [routerLinkActive]="['active']">REGISTER</a>
+    </div>
+
+    <div class="right" *ngIf="customerName">
+         <a routerLink="/home">Grocery</a> &nbsp; &nbsp;
+
+         <div class="actions" *ngIf="role">
+              <a routerLink="/home/addproduct">Add Product</a>
+         </div>
+         <div class="actions"  *ngIf="!role">
+              <a routerLink="/home/myorder">My Orders</a>
+              <a routerLink="/home/cart">View Cart</a>
+         </div>
+         
+    </div>
+    <div class="info" *ngIf="customerName">
+          <b> {{ customerName }}</b>
+         <a style="margin-left: 15px" (click)="LogoutButton()" >
+              Logout
+         </a>
+    </div>  
+</div>
